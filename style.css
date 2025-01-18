@@ -3,15 +3,21 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Smooch Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    height: 100%;
 
 }
 .card {
-    height: 100dvh;
+    height: 100%;
     width: 100%;
     display: grid;
     flex-direction: column;
     background-color: #fbff00;
     text-align: center;
+    padding-bottom: 2rem;
 }
 .profile-picture {
     width: 20rem;
@@ -19,35 +25,38 @@ body {
     border-radius: 50%;
     object-fit: cover;
     position: relative;
-    top: 2rem;
+    top: 1rem;
     margin: 0 auto;
-    margin-bottom: 2rem; 
+    margin-bottom: 1rem; 
     
 }
 .card h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 10px;
 }
 .card p {
     padding: .5rem;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-top: 2rem;
 }
 .card button {
-    position: relative;
-    bottom: 1rem;
+    
     width: fit-content;
     justify-self: center;
     align-self: center;
     margin-top: 2rem;
     padding: 2rem 2rem;
-    font-size: 2rem;
     color: #fbff00;
     background-color: #000000;
     border: none;
     border-radius: 5px;
-    box-shadow: #3f3f3f 0px 0px 10px;
+    box-shadow: #3f3f3f 0px 0px 15px;
     cursor: pointer;
+    font-family: "Smooch Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
 }
 .card button:hover {
     background-color: #3f3f3f;
