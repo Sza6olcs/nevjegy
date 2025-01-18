@@ -6,27 +6,28 @@
     <title>Digitális Névjegykártya</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f4f4f9;
+            padding: 0;
+            box-sizing: border-box;
+
         }
         .card {
-            width: 25rem;
-            padding: 20rem 0 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+            height: 100dvh;
+            width: 100%;
+            display: grid;
+            flex-direction: column;
+            background-color: #9eac27;
             text-align: center;
         }
         .profile-picture {
+            position: relative;
             width: 20rem;
             height: 20rem;
             border-radius: 50%;
             object-fit: cover;
+            position: relative;
+            top: 2rem;
+            margin: 0 auto;
             
         }
         .card h1 {
@@ -38,17 +39,22 @@
             margin: 5px 0;
         }
         .card button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            font-size: 1em;
+            position: relative;
+            bottom: 1rem;
+            width: fit-content;
+            justify-self: center;
+            align-self: center;
+            margin-top: 2rem;
+            padding: 2rem 2rem;
+            font-size: 2rem;
             color: #fff;
-            background-color: #007BFF;
+            background-color: #000000;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         .card button:hover {
-            background-color: #0056b3;
+            background-color: #000000;
         }
         #fileUpload {
             display: none;
@@ -57,13 +63,15 @@
 </head>
 <body>
     <div class="card">
-        <img src="2018-10-10-17-15-18.jpg" alt="Profilkép" class="profile-picture" id="profileImage">
-        <input type="file" id="fileUpload" accept="image/*">
-        <label for="fileUpload" style="cursor: pointer; color: #007BFF;">Profilkép feltöltése</label>
-        <h1>Az Ön Neve</h1>
-        <p>Pozíció</p>
-        <p>Email: pelda@email.com</p>
-        <p>Telefon: +36 12 345 6789</p>
+        <div class="profile-picture">
+            <img src="2018-10-10-17-15-18.jpg" alt="Profilkép" class="profile-picture" id="profileImage">
+        </div>
+        <div class="contact-info">
+            <h1>Balázs Szabolcs</h1>
+            <p>Opartions & sales Manager</p>
+            <p>Email: szabolcs.balaz@outlook.com</p>
+            <p>Telefon: +36 20 447 2990</p>
+    </div>
         <button id="saveContact">Névjegy mentése</button>
     </div>
     <script>
