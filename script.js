@@ -2,39 +2,34 @@
 
 
 
-// A kapcsolat adatainak mentése vCard formátumban
-
-
-
-
 function saveContact() {
+  // Kapcsolati információk definiálása
   var contact = {
-    name: "Kovács János",
-    company: "Példa Kft.",
-    position: "Ügyvezető igazgató",
-    address: "1234 Budapest, Példa utca 1.",
-    phone: "+36 1 234 5678",
-    email: "janos.kovacs@pelda.hu"
+      name: "Balázs Szabolcs",
+      title: "Operations & Sales Manager",
+      email: "szabolcs.balazs@outlook.com",
+      phone: "+36 20 447 2990"
   };
 
-  var vcard = "BEGIN:VCARD\n" +
-               "VERSION:3.0\n" +
-               "FN:" + contact.name + "\n" +
-               "ORG:" + contact.company + "\n" +
-               "TITLE:" + contact.position + "\n" +
-               "ADR;TYPE=WORK:;;" + contact.address + "\n" +
-               "TEL;TYPE=WORK,VOICE:" + contact.phone + "\n" +
-               "EMAIL:" + contact.email + "\n" +
-               "END:VCARD";
+  // vCard string létrehozása
+  var vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:${contact.name}\nTITLE:${contact.title}\nEMAIL:${contact.email}\nTEL;TYPE=WORK,VOICE:${contact.phone}\nEND:VCARD`;
 
-  var blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-  var url = URL.createObjectURL(blob);
+  // Blob létrehozása a vCard adatokból
+  var blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8" });
 
+  // Link elem létrehozása
   var link = document.createElement("a");
-  link.href = url;
-  link.download = contact.name + ".vcf";
+
+  // Blob URL beállítása és letöltési attribútum
+  link.href = URL.createObjectURL(blob);
+  link.download = `${contact.name}.vcf`;
+
+  // Link hozzáadása a dokumentumhoz, kattintás szimulálása és eltávolítása
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+
+  // Az objektum URL visszavonása
+  URL.revokeObjectURL(link.href);
 }
 
