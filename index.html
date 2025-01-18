@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitális Névjegykártya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .card {
+            width: 25rem;
+            padding: 20rem 0 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
+        }
+        .profile-picture {
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            object-fit: cover;
+            
+        }
+        .card h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 1.5rem;
+            margin: 5px 0;
+        }
+        .card button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background-color: #0056b3;
+        }
+        #fileUpload {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="2018-10-10-17-15-18.jpg" alt="Profilkép" class="profile-picture" id="profileImage">
+        <input type="file" id="fileUpload" accept="image/*">
+        <label for="fileUpload" style="cursor: pointer; color: #007BFF;">Profilkép feltöltése</label>
+        <h1>Az Ön Neve</h1>
+        <p>Pozíció</p>
+        <p>Email: pelda@email.com</p>
+        <p>Telefon: +36 12 345 6789</p>
+        <button id="saveContact">Névjegy mentése</button>
+    </div>
+    <script>
+        document.getElementById('fileUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileImage').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('saveContact').addEventListener('click', () => {
+            const contact = {
+                name: "Az Ön Neve",
+                title: "Pozíció",
+                email: "pelda@email.com",
+                phone: "+36 12 345 6789"
+            };
+            
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${contact.name}
+TITLE:${contact.title}
+EMAIL:${contact.email}
+TEL:${contact.phone}
+END:VCARD`;
+            
+            const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = "nevjegy.vcf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
