@@ -1,0 +1,61 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.card {
+    height: 100dvh;
+    width: 100%;
+    display: grid;
+    flex-direction: column;
+    background-color: #9eac27;
+    text-align: center;
+}
+.profile-picture {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    top: 2rem;
+    margin: 0 auto;
+    
+}
+.card h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.card p {
+    padding: .5rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+.card button {
+    position: relative;
+    bottom: 1rem;
+    width: fit-content;
+    justify-self: center;
+    align-self: center;
+    margin-top: 2rem;
+    padding: 2rem 2rem;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    box-shadow: #3f3f3f 0px 0px 10px;
+    cursor: pointer;
+}
+.card button:hover {
+    background-color: #3f3f3f;
+}
+#fileUpload {
+    display: none;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}

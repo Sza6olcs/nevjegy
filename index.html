@@ -4,114 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digitális Névjegykártya</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-        }
-        .card {
-            height: 100dvh;
-            width: 100%;
-            display: grid;
-            flex-direction: column;
-            background-color: #9eac27;
-            text-align: center;
-        }
-        .profile-picture {
-            position: relative;
-            width: 20rem;
-            height: 20rem;
-            border-radius: 50%;
-            object-fit: cover;
-            position: relative;
-            top: 2rem;
-            margin: 0 auto;
-            
-        }
-        .card h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        .card p {
-            font-size: 1.5rem;
-            margin: 5px 0;
-        }
-        .card button {
-            position: relative;
-            bottom: 1rem;
-            width: fit-content;
-            justify-self: center;
-            align-self: center;
-            margin-top: 2rem;
-            padding: 2rem 2rem;
-            font-size: 2rem;
-            color: #fff;
-            background-color: #000000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .card button:hover {
-            background-color: #000000;
-        }
-        #fileUpload {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="card">
         <div class="profile-picture">
-            <img src="2018-10-10-17-15-18.jpg" alt="Profilkép" class="profile-picture" id="profileImage">
+            <img src="profilepic.jpg" alt="Profilkép" class="profile-picture" id="profileImage">
         </div>
         <div class="contact-info">
             <h1>Balázs Szabolcs</h1>
             <p>Opartions & sales Manager</p>
-            <p>Email: szabolcs.balaz@outlook.com</p>
-            <p>Telefon: +36 20 447 2990</p>
+            <P><a href="mailto:szabolcs.balazs@outlook.com">szabolcs.balazs@outlook.com</a></P>
+            <p><a href="tel:+36204472990">Telefon: +36 20 447 2990</a></p>
     </div>
-        <button id="saveContact">Névjegy mentése</button>
+        <button onclick="saveContact()">Kapcsolat mentése</button>
     </div>
-    <script>
-        document.getElementById('fileUpload').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('profileImage').src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        });
 
-        document.getElementById('saveContact').addEventListener('click', () => {
-            const contact = {
-                name: "Az Ön Neve",
-                title: "Pozíció",
-                email: "pelda@email.com",
-                phone: "+36 12 345 6789"
-            };
-            
-            const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:${contact.name}
-TITLE:${contact.title}
-EMAIL:${contact.email}
-TEL:${contact.phone}
-END:VCARD`;
-            
-            const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-            const url = URL.createObjectURL(blob);
-            
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = "nevjegy.vcf";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-    </script>
+
+    <script src="srcipt.js"></script>
 </body>
 </html>
