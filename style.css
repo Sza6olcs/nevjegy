@@ -31,7 +31,8 @@ header {
     
  z-index: 2;
  max-width: 100dvw;
- translate:0 -30%;
+ translate:0 -35%;
+ margin-bottom: -5rem;
  
  
 }
