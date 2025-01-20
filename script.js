@@ -6,8 +6,8 @@ function saveContact() {
     name: "Szabolcs Balázs",
     title: "Operations & Sales Manager",
     email: "balazs@inducat.com",
-    phone: "+36 20 447 2990",
-    photoUrl: "https://bszabolcsl.hu/profilepic.png" // A profilkép URL-je
+    mobile: "+36 20 447 2990",
+    photoUrl: "https://pelda.com/profilkep.jpg" // A profilkép URL-je
   };
 
   // Profilkép betöltése és base64 kódolása
@@ -18,13 +18,13 @@ function saveContact() {
       reader.onloadend = function() {
         var base64data = reader.result.split(',')[1];
         
-        // vCard string létrehozása a profilképpel
+        // vCard string létrehozása a profilképpel és mobilszámmal
         var vCardData = `BEGIN:VCARD
 VERSION:3.0
 FN:${contact.name}
 TITLE:${contact.title}
 EMAIL:${contact.email}
-TEL;TYPE=WORK,VOICE:${contact.phone}
+TEL;TYPE=CELL:${contact.mobile}
 PHOTO;ENCODING=b;TYPE=JPEG:${base64data}
 END:VCARD`;
 
