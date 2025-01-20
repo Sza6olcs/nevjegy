@@ -1,56 +1,97 @@
 
 body {
-    margin: 0;
-    padding: 0;
+    margin: 1rem;
+    padding: 1rem;
     box-sizing: border-box;
     font-family: "Smooch Sans", serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    height: 100%;
-
-}
-.card {
-    height: 100%;
-    width: 100%;
+    background-color: #fdc32d;
     display: grid;
-    flex-direction: column;
-    background-color: #fbff00;
-    text-align: center;
-    padding-bottom: 2rem;
+    grid-template-rows: 1fr auto 0.5fr;
+    grid-template-areas: header main footer;
+    height: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
 }
-.profile-picture {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 50%;
+header {
+    
+    display: flex;
+    flex-direction: column;
+    color: #fdc32d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#logo {
+    z-index: 1;
+    border-radius: 20%;
     object-fit: cover;
     position: relative;
-    top: 1rem;
     margin: 0 auto;
-    margin-bottom: 1rem; 
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+
+#profile-picture {
+    z-index: 2;
+    width: 25rem;
+    height: auto;
+    max-width: 100%;
     
 }
-.card h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #58585a;
+    max-width: 100%;
+    
 }
-.card p {
-    padding: .5rem;
+main h1 {
+    font-size: 4rem;
+    color: #fdc32d;
+}
+main p {
+    color: #fdc32d;
     font-size: 2.5rem;
     margin-top: 2rem;
 }
-.card button {
+a {
+    text-decoration: none;
+    color: #fdc32d;
+}
+a:hover {
+    color: #ecff82;
+}
+.contact-info {
+    width: 100%;
+    color: #fdc32d;
+}
+footer {
     
-    width: fit-content;
+    color: #fdc32d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+button {
+
     justify-self: center;
     align-self: center;
-    margin-top: 2rem;
     padding: 2rem 2rem;
-    color: #fbff00;
-    background-color: #000000;
+    color: #fdc32d;
+    background-color: #58585a;
     border: none;
     border-radius: 5px;
-    box-shadow: #3f3f3f 0px 0px 15px;
+    box-shadow: #000 0px 0px 15px;
     cursor: pointer;
     font-family: "Smooch Sans", serif;
     font-optical-sizing: auto;
@@ -58,17 +99,6 @@ body {
     font-style: normal;
     font-size: 2rem;
 }
-.card button:hover {
+button:hover {
     background-color: #3f3f3f;
-}
-#fileUpload {
-    display: none;
-}
-a {
-    text-decoration: none;
-    color: #fbff00;
-}
-.contact-info {
-    background-color: black;
-    color: #fbff00;
 }
