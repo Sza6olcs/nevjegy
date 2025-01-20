@@ -5,9 +5,9 @@
 function saveContact() {
   // Kapcsolati információk definiálása
   var contact = {
-      name: "Balázs Szabolcs",
+      name: "Szabolcs Balázs",
       title: "Operations & Sales Manager",
-      email: "szabolcs.balazs@outlook.com",
+      email: "balazs@inducat.com",
       phone: "+36 20 447 2990"
   };
 
