@@ -7,7 +7,7 @@ function saveContact() {
     title: "Operations & Sales Manager",
     email: "balazs@inducat.com",
     phone: "+36 20 447 2990",
-    photoUrl: "https://pelda.com/profilkep.jpg" // A profilkép URL-je
+    photoUrl: "https://bszabolcsl.hu/profilepic.png" // A profilkép URL-je
   };
 
   // Profilkép betöltése és base64 kódolása
