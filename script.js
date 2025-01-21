@@ -4,7 +4,8 @@ function saveContact() {
     name: "Szabolcs Balázs",
     title: "Operations & Sales Manager",
     email: "balazs@inducat.com",
-    mobile: "+36 20 447 2990"
+    mobile: "+36 20 447 2990",
+    company: "Inducat Kft."
   };
 
   // vCard string létrehozása
@@ -14,6 +15,7 @@ FN:${contact.name}
 TITLE:${contact.title}
 EMAIL:${contact.email}
 TEL;TYPE=CELL:${contact.mobile}
+ORG:${contact.company}
 END:VCARD`;
 
   // Blob létrehozása a vCard adatokból
