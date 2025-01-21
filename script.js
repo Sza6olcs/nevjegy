@@ -5,8 +5,7 @@ function saveContact() {
     title: "Operations & Sales Manager",
     email: "balazs@inducat.com",
     mobile: "+36 20 447 2990",
-    company: "Inducat Kft."
-  };
+    company: "Inducat GTS." };
 
   // vCard string létrehozása
   var vCardData = `BEGIN:VCARD
