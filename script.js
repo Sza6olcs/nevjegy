@@ -4,7 +4,7 @@ function saveContact() {
     name: "Szabolcs Balázs",
     title: "Operations & Sales Manager",
     email: "balazs@inducat.com",
-    mobile: "+36 20 447 2990",
+    mobile: "+4915165053441",
     company: "Inducat GTS." };
 
   // vCard string létrehozása
